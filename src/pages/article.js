@@ -1,10 +1,15 @@
 import React from 'react'
 import Layout from '../components/layout'
+import ArticleC from '../components/article'
+import Categories from '../components/categories'
+import Club from '../components/club'
 
-const Article = ()=> {
+const Article = (props)=> {
     return(
         <Layout>
-            <p>Article</p>
+            <ArticleC/>
+            <Categories/>
+            <Club/>
         </Layout>
     )
 }
