@@ -1,19 +1,43 @@
 import React from 'react'
 import {Link} from'gatsby'
-import Ent1 from '../images/articles/ent1.jpg'
-import Ent2 from '../images/articles/ent2.jpg'
-import Sport from '../images/articles/sports1.jpg'
-import Tech1 from '../images/articles/tech1.jpg'
-import Tech2 from '../images/articles/tech2.jpg'
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+
+const getImages = graphql `
+query  {
+  editorImages: allFile(filter: {relativeDirectory: {eq: "articles"}}, sort: {fields: childImageSharp___fluid___originalName}) {
+    edges {
+      node {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+          id
+        }
+      }
+    }
+  }
+}
+
+
+`  
+
+
+
 
 
 const EditorPics = ()=>{
+
+  const data = useStaticQuery(getImages)
+  const picImages = data.editorImages.edges
+
     return (
         <section>
             <h2>Editor Picks</h2>
             <div>
               <article>
-                <img src = {Ent1} alt = ""></img>
+           
+                <Img fluid = {picImages[0].node.childImageSharp.fluid} alt = ""></Img>
                 <div><button>Entertainment</button>
                 <h3>
                     <Link to = '/article'>Lorem ipsum dolor sit amet</Link>
@@ -29,8 +53,10 @@ const EditorPics = ()=>{
               </h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quam eius ducimus optio veniam sit nihil beatae ea autem. Doloribus.</p>
               </article>
+
               <article>
-                <img src ={Tech1}/><div>
+              <Img fluid = {picImages[3].node.childImageSharp.fluid} alt = ""></Img>
+                <div>
                 <button>Technology</button>
                 <h3>
                     <Link to = '/article'>Lorem ipsum dolor sit amet</Link>
@@ -38,8 +64,10 @@ const EditorPics = ()=>{
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quam eius ducimus optio veniam sit nihil beatae ea autem. Doloribus.</p>
                 </div>
               </article>
+
               <article>
-                <img src ={Sport}/><div>
+              <Img fluid = {picImages[2].node.childImageSharp.fluid} alt = ""></Img>
+                <div>
                 <button>Sports</button>
                 <h3>
                     <Link to = '/article'>Lorem ipsum dolor sit amet</Link>
@@ -47,16 +75,18 @@ const EditorPics = ()=>{
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quam eius ducimus optio veniam sit nihil beatae ea autem. Doloribus.</p>    
                 </div>
               </article>
+
               <article>
-                <img src ={Tech2}/><div>
+              <Img fluid = {picImages[4].node.childImageSharp.fluid} alt = ""></Img>
+                <div>
                 <button>Technology</button>
                 <h3>
                     <Link to = '/article'>Lorem ipsum dolor sit amet</Link>
-                </h3>
-                
+                </h3> 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quam eius ducimus optio veniam sit nihil beatae ea autem. Doloribus.</p>    
                 </div>
               </article>
+
               <article>
               <button>Sports</button>
               <h3>
@@ -64,8 +94,9 @@ const EditorPics = ()=>{
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quam eius ducimus optio veniam sit nihil beatae ea autem. Doloribus.</p>
               </article>
+
               <article>
-                <img src ={Ent2}/>
+              <Img fluid = {picImages[1].node.childImageSharp.fluid} alt = ""></Img>
                 <div>
                 <button>Entertainment</button>
                 <h3>
@@ -73,7 +104,8 @@ const EditorPics = ()=>{
                 </h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quam eius ducimus optio veniam sit nihil beatae ea autem. Doloribus.</p>
                 </div>
-              </article>   
+              </article>
+                 
             </div>            
             </section>
     )

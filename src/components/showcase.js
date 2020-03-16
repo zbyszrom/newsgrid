@@ -19,7 +19,6 @@ query {
 const Showcase = ()=> {
 
     const data = useStaticQuery(getImage)
-
     return(
         <BackgroundImage
         fluid = {data.Bcg.childImageSharp.fluid} className = ''>
