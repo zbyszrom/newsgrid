@@ -8,7 +8,7 @@ query {
     Bcg: file(name: {eq: "featured"}) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }

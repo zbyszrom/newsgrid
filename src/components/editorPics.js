@@ -10,7 +10,7 @@ query  {
       node {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
           id
         }
