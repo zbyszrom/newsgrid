@@ -5,8 +5,9 @@ import logo from '../images/logo_light.png'
 const Footer = ()=> {
     return(
         <footer>
+          <div className = 'container'>
             <div>
-            <img src= {logo} alt="NewsGrid"></img>
+            <img src= {logo} alt="NewsGrid" className = 'logo'></img>
             </div>
             <p>suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet</p>
         <div>
@@ -21,6 +22,7 @@ const Footer = ()=> {
         <p>
           Copyright &copy; 2019, All Rights Reserved
         </p>
+      </div>
       </div>
         </footer>
         

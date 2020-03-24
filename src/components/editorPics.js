@@ -33,6 +33,7 @@ const EditorPics = ()=>{
 
     return (
         <section>
+          <div className = 'container'>
             <h2>Editor Picks</h2>
             <div>
               <article>
@@ -106,7 +107,8 @@ const EditorPics = ()=>{
                 </div>
               </article>
                  
-            </div>            
+            </div> 
+            </div>           
             </section>
     )
 }
