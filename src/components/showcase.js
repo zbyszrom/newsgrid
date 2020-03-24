@@ -27,9 +27,6 @@ const SBackgroundImage = styled(BackgroundImage)`
   const Content =styled.div`
   margin-left: 25%;
   `
- const H1 = styled.h1`
-    text-transform: uppercase;
- `  
  const Button = styled(Link)`
   display: inline-block;
   border: none;
@@ -54,7 +51,7 @@ const Showcase = ()=> {
         <SBackgroundImage
         fluid = {backgroundFluidImageStack} className = '' >
             <Content>
-            <H1>Some Sports Article</H1>
+            <h1>Some Sports Article</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus rerum officia quibusdam mollitia deserunt animi soluta laudantium. Quam sapiente a dolorum magnam necessitatibus quis tempore facere totam. Dolor, sequi distinctio!</p>
             <Button to = ''> Read more</Button>
             </Content>
