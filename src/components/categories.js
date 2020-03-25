@@ -3,7 +3,7 @@ import {FaChevronRight} from 'react-icons/fa'
 
 const Categories = ()=>{
     return(
-        <aside>
+        <article>
         <h2>Categories</h2>
         <ul >
             <li><a href="#"><FaChevronRight/>Sports</a></li>
@@ -12,7 +12,7 @@ const Categories = ()=>{
             <li><a href="#"><FaChevronRight/>Fashion</a></li>
             <li><a href="#"><FaChevronRight/>Shopping</a></li>
           </ul>
-          </aside>
+          </article>
     )
 }
 export default Categories
